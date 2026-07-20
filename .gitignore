@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.skill
+# Données perso : jamais dans le repo (elles vivent dans ~/.freelance-manager)
+.freelance-manager/
+data/

@@ -1,0 +1,35 @@
+{
+  "_note": "Taux vérifiés juillet 2026. À revérifier chaque janvier (urssaf.fr).",
+  "regime": {
+    "taux_cotisations": 0.256,
+    "taux_cfp": 0.002,
+    "versement_liberatoire": false,
+    "taux_vl": 0.022,
+    "acre": false,
+    "taux_acre": 0.128,
+    "seuil_tva": 37500,
+    "seuil_tva_majore": 41250,
+    "plafond_micro": 83600
+  },
+  "objectifs": {
+    "tjm_cible": 400,
+    "tjm_plancher": 300,
+    "ca_annuel_cible": 45000,
+    "jours_factures_par_mois_cible": 15
+  },
+  "perso": {
+    "charges_perso_mensuelles": 1500,
+    "buffer_mois": 3,
+    "provision_impot_pct": 0.10
+  },
+  "temps": {
+    "categories": ["dev", "contenu", "prospection", "admin", "veille"],
+    "repartition_cible": {
+      "dev": 0.55,
+      "contenu": 0.20,
+      "prospection": 0.15,
+      "admin": 0.05,
+      "veille": 0.05
+    }
+  }
+}
