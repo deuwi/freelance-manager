@@ -24,20 +24,24 @@ réduit fortement la consommation de jetons.
 - **Point hebdo** : `fm.py hebdo` sort tout en un bloc compact.
 - **Référence stratégie** (`references/strategies.md`) : canaux de
   prospection, plateformes, modèles de revenus — chargée par Claude
-  uniquement quand la question s'y prête.
+  uniquement quand la question s'y prête, et croisée avec `fm.py status`
+  et ton profil (`profil.md`).
 
 ## Installation
 
 ### Comme skill Claude
 
 Importer le dossier (ou le `.skill` packagé) dans Claude Code / Claude.ai,
-puis en conversation : « initialise mon freelance manager ».
+puis en conversation : « initialise mon freelance manager ». Claude lance
+`fm.py init`, puis te demande tes chiffres (config.json) et de quoi remplir
+ton profil (profil.md).
 
 ### En CLI autonome
 
 ```bash
 python3 scripts/fm.py init
 # éditer ~/.freelance-manager/config.json (TJM cible, charges perso...)
+# éditer ~/.freelance-manager/profil.md (stack, réseau, plateformes actives...)
 python3 scripts/fm.py treso set --montant 8500
 python3 scripts/fm.py mission eval --tjm 400 --jours 20
 python3 scripts/fm.py retrait
@@ -46,6 +50,21 @@ python3 scripts/fm.py hebdo
 
 Python ≥ 3.8, stdlib uniquement. Les données restent en local dans
 `~/.freelance-manager/` (jamais dans le repo).
+
+## Personnalisation
+
+La skill ne contient aucune donnée personnelle : tout ce qui t'est propre
+vit dans `~/.freelance-manager/`, créé par `fm.py init` à partir de
+`templates/`.
+
+- `config.json` — le quantitatif : TJM cible et plancher, charges perso
+  mensuelles, CA annuel cible, taux et seuils.
+- `profil.md` — le qualitatif : stack, localisation, réseau direct,
+  plateformes actives, marque contenu éventuelle. La référence stratégie
+  s'appuie dessus au lieu de valeurs codées en dur.
+
+La skill est donc réutilisable telle quelle par n'importe quel freelance
+dev : forke, lance `init`, remplis tes deux fichiers.
 
 ## Taux et seuils
 
